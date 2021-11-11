@@ -1,0 +1,2 @@
+.dark,.light{--accent-color:#83C1FA}.light{--bg-color:white;--text-color:#262626;--results-color:#83C1FA;--back-text-color:#E0E0E0;--icon-color:#E0E0E0}.dark{--bg-color:#262626;--text-color:white;--results-color:white;--back-text-color:#585858;--icon-color:#3C3C3C}body{color:var(--text-color);background-color:var(--bg-color)}
+/*# sourceMappingURL=style.min.css.map */
