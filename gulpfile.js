@@ -5,6 +5,8 @@ const sass = require('gulp-sass')(require('sass'))
 const autoprefixer = require('gulp-autoprefixer')
 const rename = require('gulp-rename')
 const server = require('browser-sync');
+const gulpAvif = require('gulp-avif')
+const gulpWebp = require('gulp-webp')
 
 function html () {
   return src('src/*.html')
@@ -46,7 +48,14 @@ function refresh (done) {
   done()
 }
 
+function toAvif () {
+  return src('src/img/*.{png,jpg}')
+    .pipe(gulpAvif())
+    .pipe(dest('dist/img/'));
+}
+
 exports.html = html
 exports.css = css
 exports['css-nomin'] = cssNomin
+exports['to-avif'] = toAvif
 exports.serve = serve
