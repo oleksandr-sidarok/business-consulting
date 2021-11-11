@@ -7,6 +7,7 @@ const rename = require('gulp-rename')
 const server = require('browser-sync');
 const gulpAvif = require('gulp-avif')
 const gulpWebp = require('gulp-webp')
+const imagemin = require('gulp-imagemin')
 
 function html () {
   return src('src/*.html')
@@ -60,9 +61,20 @@ function toWebp () {
     .pipe(dest('dist/img/'));
 }
 
+function image () {
+  return src('src/img/*.{png,jpg}')
+  .pipe(imagemin([
+    gifsicle({interlaced: true}),
+    mozjpeg({quality: 75, progressive: true}),
+    optipng({optimizationLevel: 5}),
+  ]))
+  .pipe(dest('dist/img/'));
+}
+
 exports.html = html
 exports.css = css
 exports['css-nomin'] = cssNomin
 exports['to-avif'] = toAvif
 exports['to-webp'] = toWebp
+exports.image = image
 exports.serve = serve
