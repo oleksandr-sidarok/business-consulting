@@ -48,9 +48,15 @@ function refresh (done) {
   done()
 }
 
-function toAvif () {
+function toAvif ({quality = 70}) {
   return src('src/img/*.{png,jpg}')
     .pipe(gulpAvif())
+    .pipe(dest('dist/img/'));
+}
+
+function toWebp () {
+  return src('src/img/*.{png,jpg}')
+    .pipe(gulpWebp())
     .pipe(dest('dist/img/'));
 }
 
@@ -58,4 +64,5 @@ exports.html = html
 exports.css = css
 exports['css-nomin'] = cssNomin
 exports['to-avif'] = toAvif
+exports['to-webp'] = toWebp
 exports.serve = serve
