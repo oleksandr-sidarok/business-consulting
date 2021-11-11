@@ -21,5 +21,13 @@ function css () {
     .pipe(dest('dist/css'))
 }
 
+function cssNomin () {
+  return src('src/scss/**/*.scss')
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(dest('dist/css'))
+}
+
 exports.html = html
 exports.css = css
+exports['css-nomin'] = cssNomin
