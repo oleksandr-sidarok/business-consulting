@@ -48,15 +48,15 @@ function refresh (done) {
   done()
 }
 
-function toAvif ({quality = 70}) {
+function toAvif () {
   return src('src/img/*.{png,jpg}')
-    .pipe(gulpAvif())
+    .pipe(gulpAvif({quality: 70, speed: 5}))
     .pipe(dest('dist/img/'));
 }
 
 function toWebp () {
   return src('src/img/*.{png,jpg}')
-    .pipe(gulpWebp())
+    .pipe(gulpWebp({quality: 70}))
     .pipe(dest('dist/img/'));
 }
 
