@@ -10,6 +10,8 @@ const gulpWebp = require('gulp-webp')
 const imagemin = require('gulp-imagemin')
 const mozjpeg = require('imagemin-mozjpeg')
 const optipng = require('imagemin-optipng')
+const svgo = require('gulp-svgo')
+const svgstore = require('gulp-svgstore')
 
 function html () {
   return src('src/*.html')
@@ -65,11 +67,23 @@ function toWebp () {
 
 function image () {
   return src('src/img/*.{png,jpg}')
-  .pipe(imagemin([
-    mozjpeg({quality: 75, progressive: true}),
-    optipng({optimizationLevel: 5}),
-  ]))
-  .pipe(dest('dist/img/'));
+    .pipe(imagemin([
+      mozjpeg({quality: 75, progressive: true}),
+      optipng({optimizationLevel: 5}),
+    ]))
+    .pipe(dest('dist/img/'));
+}
+
+function sprite () {
+  return src('src/img/**/icon-*.svg')
+    .pipe(imagemin([
+      svgo({optimizationLevel: 5})
+    ]))
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename('sprite.svg'))
+    .pipe(dest('dist/img/'))
 }
 
 exports.html = html
@@ -78,4 +92,5 @@ exports['css-nomin'] = cssNomin
 exports['to-avif'] = toAvif
 exports['to-webp'] = toWebp
 exports.image = image
+exports.sprite = sprite
 exports.serve = serve
