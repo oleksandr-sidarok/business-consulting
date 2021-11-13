@@ -8,6 +8,8 @@ const server = require('browser-sync');
 const gulpAvif = require('gulp-avif')
 const gulpWebp = require('gulp-webp')
 const imagemin = require('gulp-imagemin')
+const mozjpeg = require('imagemin-mozjpeg')
+const optipng = require('imagemin-optipng')
 
 function html () {
   return src('src/*.html')
@@ -57,14 +59,13 @@ function toAvif () {
 
 function toWebp () {
   return src('src/img/*.{png,jpg}')
-    .pipe(gulpWebp({quality: 70}))
+    .pipe(gulpWebp({quality: 80}))
     .pipe(dest('dist/img/'));
 }
 
 function image () {
   return src('src/img/*.{png,jpg}')
   .pipe(imagemin([
-    gifsicle({interlaced: true}),
     mozjpeg({quality: 75, progressive: true}),
     optipng({optimizationLevel: 5}),
   ]))
