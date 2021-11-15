@@ -1,4 +1,5 @@
 const { src, dest, series, watch } = require("gulp");
+const fileInclude = require('gulp-file-include')
 const sourcemaps = require('gulp-sourcemaps')
 const csso = require('gulp-csso')
 const sass = require('gulp-sass')(require('sass'))
@@ -12,10 +13,23 @@ const mozjpeg = require('imagemin-mozjpeg')
 const optipng = require('imagemin-optipng')
 const svgo = require('gulp-svgo')
 const svgstore = require('gulp-svgstore')
+const pipeline = require('readable-stream').pipeline
+const uglify = require('gulp-uglify-es').default
+const del = require('del')
 
 function html () {
   return src('src/*.html')
     .pipe(dest('dist'))
+}
+
+function htmlInclude () {
+  return src(['./src/*.html'])
+    .pipe(fileInclude({
+      prefix: '@',
+      basepath: '@file'
+    }))
+    .pipe(dest('./dist'))
+    .pipe(server.stream());
 }
 
 function css () {
@@ -34,18 +48,6 @@ function cssNomin () {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(dest('dist/css'))
-}
-
-function serve () {
-  server.init({
-    server: 'src/',
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false
-  })
-  watch('src/scss/**/*.scss', series(css, cssNomin, refresh))
-  watch('src/*.html', series(html, refresh))
 }
 
 function refresh (done) {
@@ -86,11 +88,36 @@ function sprite () {
     .pipe(dest('dist/img/'))
 }
 
+function js () {
+  return pipeline(
+    src('src/js/*.js'),
+    sourcemaps.init(),
+    uglify(),
+    sourcemaps.write('.'),
+    rename({suffix: '.min'}),
+    dest('dist/')
+  )
+}
+
+function serve () {
+  server.init({
+    server: 'dist/',
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false
+  })
+  watch('src/scss/**/*.scss', series(css, cssNomin, refresh))
+  watch('src/*.html', series(html, refresh))
+}
+
 exports.html = html
+exports['html-include'] = htmlInclude
 exports.css = css
 exports['css-nomin'] = cssNomin
 exports['to-avif'] = toAvif
 exports['to-webp'] = toWebp
 exports.image = image
 exports.sprite = sprite
+exports.js = js
 exports.serve = serve
