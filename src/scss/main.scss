@@ -1,0 +1,10 @@
+// Base import
+@import './vars';
+@import './mixins';
+@import './fonts';
+@import './settings';
+
+// Import blocks styles
+@import './blocks/header.scss';
+@import './blocks/nav.scss';
+@import './blocks/theme-toggle.scss';

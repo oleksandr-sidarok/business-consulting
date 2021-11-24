@@ -1,0 +1,9 @@
+.header {
+  &__inner {
+    @include flex-all-sb;
+  }
+
+  &__logo {
+    width: 46px;
+  }
+}

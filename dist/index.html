@@ -4,12 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./scss/style.css">
+  <link rel="stylesheet" href="./css/style.min.css">
   <title>Document</title>
 </head>
-<body class="dark">
-    <header>
-  It is header
+<body class="light">
+    <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <img src="./img/logo.svg" alt="Company logotype">
+    </div>
+    <button class="btn-reset theme-toggle">
+      <svg class="theme-togle__icon theme-togle__icon--day hiden">
+        <use xlink:href="img/sprite.svg#icon-day-mode"></use>
+      </svg>
+      <svg class="theme-togle__icon theme-togle__icon--night">
+        <use xlink:href="img/sprite.svg#icon-night-mode"></use>
+      </svg>
+    </button>
+    <nav class="nav">
+      <svg class="nav__icon">
+        <use xlink:href="img/sprite.svg#icon-burger"></use>
+      </svg>
+      <ul class="nav__list hiden">
+        <li class="nav__item"><a href="#" class="nav__link">Обо мне</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Мои проекты</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Отзывы</a></li>
+      </ul>
+    </nav>
+    <button class="contact-me hiden"></button>
+  </div>
 </header>
     <main>
       <h1>

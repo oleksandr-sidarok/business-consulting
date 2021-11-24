@@ -16,7 +16,6 @@ const svgstore = require('gulp-svgstore')
 const pipeline = require('readable-stream').pipeline
 const uglify = require('gulp-uglify-es').default
 const del = require('del');
-const avif = require("gulp-avif");
 
 function html () {
   return src('src/*.html')
@@ -24,7 +23,7 @@ function html () {
 }
 
 function htmlInclude () {
-  return src(['./src/*.html'])
+  return src(['src/*.html'])
   .pipe(fileInclude({
     prefix: '@',
     basepath: '@file'
@@ -69,7 +68,7 @@ function toWebp () {
 }
 
 function compressImages () {
-  return src('src/img/*.{png,jpg}')
+  return src('src/img/**/*.{png,jpg,svg}')
     .pipe(imagemin([
       mozjpeg({quality: 75, progressive: true}),
       optipng({optimizationLevel: 3}),
@@ -78,10 +77,10 @@ function compressImages () {
 }
 
 function sprite () {
-  return src('src/img/**/icon-*.svg')
-    .pipe(imagemin([
+  return src('src/img/icon/icon-*.svg')
+    .pipe(
       svgo({optimizationLevel: 3})
-    ]))
+    )
     .pipe(svgstore({
       inlineSvg: true
     }))
@@ -123,7 +122,8 @@ function serve () {
     ui: false
   })
   watch('src/scss/**/*.scss', series(css, cssNomin, refresh))
-  watch('src/*.html', series(html, refresh))
+  watch('src/partials/*.html', htmlInclude);
+  watch('src/*.html', htmlInclude);
 }
 
 exports.html = html
