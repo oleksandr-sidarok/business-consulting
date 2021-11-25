@@ -1,7 +1,37 @@
 .nav {
+  position: relative;
+  height: 46px;
+  font-size: 20px;
+
+  &__list {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+
+    padding-top: 130px;
+    padding-bottom: 50px;
+    background-color: var(--bg-color);
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
   &__icon {
     width: 46px;
     height: 46px;
     fill: none;
+  }
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 15px;
   }
 }

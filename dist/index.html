@@ -26,10 +26,18 @@
         <svg class="nav__icon">
           <use xlink:href="img/sprite.svg#icon-burger"></use>
         </svg>
-        <ul class="nav__list hiden">
+        <ul class="nav__list list-reset hiden">
+          <button class="nav__close modal-close btn-reset">
+            <svg>
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
           <li class="nav__item"><a href="#" class="nav__link">Обо мне</a></li>
           <li class="nav__item"><a href="#" class="nav__link">Мои проекты</a></li>
           <li class="nav__item"><a href="#" class="nav__link">Отзывы</a></li>
+          <div class="btn-wrapper">
+            <button class="btn">Связаться со мной</button>
+          </div>
         </ul>
       </nav>
       <button class="contact-me hiden"></button>
@@ -44,12 +52,18 @@
       <div class="intro__text">
         <p>Консультирую по вопросам масштабирования бизнеса</p>
       </div>
-      <picture>
-        <source srcset="img/mobile/intro-photo.avif">
-        <source srcset="img/mobile/intro-photo.webp">
-        <img src="img/mobile/intro-photo.jpg" alt="intro photo" class="intro__img img-shadow">
+      <picture class="intro__img">
+        <source srcset="img/mobile/intro-photo.avif" type="" media="">
+        <source srcset="img/mobile/intro-photo.webp" type="" media="">
+        <img src="img/mobile/intro-photo.jpg" alt="intro photo" class="img-shadow" />
       </picture>
     </div>
+    <div class="section-separator"></div>
+  </div>
+</section>
+      <section class="about-me">
+  <div class="container">
+
   </div>
 </section>
     </main>
