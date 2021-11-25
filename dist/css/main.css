@@ -1,10 +1,32 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"), url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display Regular"), local("SFProDisplay-Regular"), url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("Bebas Neue Regular"), local("BebasNeueRegular"), url("../fonts/BebasNeueRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("Bebas Neue Bold"), local("BebasNeueRegular"), url("../fonts/BebasNeueBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
 .light {
   --accent-color: #83C1FA;
   --bg-color: white;
   --text-color: #262626;
   --results-color: #83C1FA;
-  --back-text-color: #E0E0E0;
-  --back-image-color: #262626;
   --icon-color: #E0E0E0;
 }
 
@@ -13,23 +35,15 @@
   --bg-color: #262626;
   --text-color: white;
   --results-color: white;
-  --back-text-color: #585858;
-  --back-image-color: #262626;
   --icon-color: #3C3C3C;
 }
 
-@media (min-width: 768px) {
-  .light {
-    --back-image-color: #83C1FA;
-  }
-
-  .dark {
-    --back-image-color: #83C1FA;
-  }
-}
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
+  min-height: 100vh;
+  font-family: "SF Pro Display";
+  font-size: 14px;
 }
 
 .container {
@@ -47,6 +61,10 @@ body {
   border: none;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 .hiden {
   position: absolute;
   top: -1px;
@@ -58,10 +76,39 @@ body {
   visibility: hidden;
 }
 
-.nav__icon {
-  fill: none;
+.title {
+  font-family: "Bebas Neue";
+  margin: 25px 0;
 }
 
+.main-title {
+  font-weight: 700;
+  font-size: 72px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0px #83c1fa;
+}
+.main-title span {
+  color: #262626;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #262626;
+  text-shadow: none;
+}
+
+.img-shadow {
+  box-shadow: 3px 3px 0px #83c1fa;
+}
+
+.header {
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-color);
+  z-index: 5;
+}
 .header__inner {
   display: flex;
   align-items: center;
@@ -74,13 +121,46 @@ body {
 .nav__icon {
   width: 46px;
   height: 46px;
+  fill: none;
 }
 
 .theme-toggle {
   width: 26px;
   height: 26px;
+  cursor: pointer;
 }
 .theme-toggle__icon {
   width: 26px;
   height: 26px;
+}
+
+.intro {
+  margin-top: 70px;
+  padding: 50px 0;
+}
+.intro__text {
+  position: relative;
+  max-width: 160px;
+  padding-left: 42vw;
+  font-weight: 500;
+}
+.intro__text::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 38vw;
+  height: 1px;
+  background: #E0E0E0;
+}
+.intro__inner {
+  position: relative;
+}
+.intro__img {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  width: 48vw;
+  height: auto;
+  z-index: -1;
 }

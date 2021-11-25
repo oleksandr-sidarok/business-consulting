@@ -9,8 +9,6 @@ const server = require('browser-sync');
 const gulpAvif = require('gulp-avif')
 const gulpWebp = require('gulp-webp')
 const imagemin = require('gulp-imagemin')
-const mozjpeg = require('imagemin-mozjpeg')
-const optipng = require('imagemin-optipng')
 const svgo = require('gulp-svgo')
 const svgstore = require('gulp-svgstore')
 const pipeline = require('readable-stream').pipeline
@@ -56,22 +54,23 @@ function refresh (done) {
 }
 
 function toAvif () {
-  return src('src/img/*.{png,jpg}')
-    .pipe(gulpAvif({quality: 70, speed: 6}))
+  return src('src/img/**/*.{png,jpg}')
+    .pipe(gulpAvif({quality: 90, speed: 6}))
     .pipe(dest('dist/img/'));
 }
 
 function toWebp () {
-  return src('src/img/*.{png,jpg}')
-    .pipe(gulpWebp({quality: 80}))
+  return src('src/img/**/*.{png,jpg}')
+    .pipe(gulpWebp({quality: 90}))
     .pipe(dest('dist/img/'));
 }
 
 function compressImages () {
   return src('src/img/**/*.{png,jpg,svg}')
     .pipe(imagemin([
-      mozjpeg({quality: 75, progressive: true}),
-      optipng({optimizationLevel: 3}),
+      imagemin.mozjpeg({quality: 95, progressive: true}),
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.svgo()
     ]))
     .pipe(dest('dist/img/'));
 }

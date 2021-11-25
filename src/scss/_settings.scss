@@ -3,8 +3,6 @@
   --bg-color: white;
   --text-color: #262626;
   --results-color: #83C1FA;
-  --back-text-color: #E0E0E0;
-  --back-image-color: #262626;
   --icon-color: #E0E0E0;
 }
 
@@ -13,25 +11,16 @@
   --bg-color: #262626;
   --text-color: white;
   --results-color: white;
-  --back-text-color: #585858;
-  --back-image-color: #262626;
   --icon-color: #3C3C3C;
-}
-
-// colors for desktop
-@media (min-width: 768px) {
-  .light {
-    --back-image-color: #83C1FA;
-  }
-
-  .dark {
-    --back-image-color: #83C1FA;
-  }
 }
 
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
+  min-height: 100vh;
+
+  font-family: 'SF Pro Display';
+  font-size: 14px;
 }
 
 .container {
@@ -50,7 +39,7 @@ body {
 }
 
 .btn {
-
+  cursor: pointer;
 }
 
 .hiden {
@@ -64,6 +53,26 @@ body {
   visibility: hidden;
 }
 
-.nav__icon{
-  fill: none;
+.title {
+  font-family: 'Bebas Neue';
+  margin: 25px 0;
+}
+
+.main-title {
+  font-weight: 700;
+  font-size: 72px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0px rgba(131, 193, 250, 1);
+
+  & span {
+    color: #262626;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #262626;
+    text-shadow: none;
+  }
+}
+
+.img-shadow {
+  box-shadow: 3px 3px 0px rgba(131, 193, 250, 1);;
 }
