@@ -61,10 +61,10 @@ a {
 }
 
 .hiden {
-  position: absolute;
+  position: fixed;
   top: -1px;
   left: -1px;
-  width: 0px;
+  width: 1px;
   height: 1px;
   padding: 0;
   margin: 0;
@@ -110,4 +110,25 @@ a {
 .modal-close {
   width: 24px;
   height: 24px;
+}
+
+.video-block {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  &__video {
+    width: 100%;
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 4;
+  }
 }

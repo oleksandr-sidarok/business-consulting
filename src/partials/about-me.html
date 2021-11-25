@@ -12,7 +12,14 @@
         <img src="img/mobile/intro-photo.jpg" alt="intro photo" class="img-shadow">
         <video src=""></video>
       </picture>
-      <video src="videos/lorem.mp4" poster="img/cover/about-me-cover.jpg" preload="metadata" controls class="about-me__video"></video>
+      <div class="video-block about-me__video ">
+        <button class="btn-reset video-block__play">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-play"></use>
+          </svg>
+        </button>
+        <video src="videos/lorem.mp4" poster="img/cover/about-me-cover.jpg" preload="metadata" class="video-block__video"></video>
+      </div>
       <div class="back-text-block">
         <div class="back-text-block__line">
           <span>Подниму бизнес с нуля</span>
