@@ -55,20 +55,20 @@ function refresh (done) {
 
 function toAvif () {
   return src('src/img/**/*.{png,jpg}')
-    .pipe(gulpAvif({quality: 90, speed: 6}))
+    .pipe(gulpAvif({quality: 98, speed: 6}))
     .pipe(dest('dist/img/'));
 }
 
 function toWebp () {
   return src('src/img/**/*.{png,jpg}')
-    .pipe(gulpWebp({quality: 90}))
+    .pipe(gulpWebp({quality: 98}))
     .pipe(dest('dist/img/'));
 }
 
 function compressImages () {
   return src('src/img/**/*.{png,jpg,svg}')
     .pipe(imagemin([
-      imagemin.mozjpeg({quality: 95, progressive: true}),
+      imagemin.mozjpeg({quality: 98, progressive: true}),
       imagemin.optipng({optimizationLevel: 3}),
       imagemin.svgo()
     ]))
@@ -101,7 +101,8 @@ function js () {
 function copy () {
   return src([
     'src/fonts/**/*',
-    'src/*.ico*'
+    'src/*.ico*',
+    'src/videos/*.mp4'
   ], {
     base: 'src'
   })

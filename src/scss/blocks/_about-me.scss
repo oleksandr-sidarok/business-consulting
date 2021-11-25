@@ -1,0 +1,27 @@
+.about-me {
+  margin-top: 80px;
+
+  &__inner {
+    position: relative;
+    padding: 50px 0 120px;
+  }
+
+  &__text {
+    margin-top: 144px;
+  }
+
+  &__img {
+    position: absolute;
+    width: 136px;
+    height: 160px;
+    top: 52px;
+    right: 22px;
+    transform: rotate(-10deg);
+  }
+
+  &__video {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+}

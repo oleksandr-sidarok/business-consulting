@@ -1,0 +1,36 @@
+.back-text-block {
+  position: relative;
+  margin-top: -40px;
+  margin-left: -300px;
+  width: 2400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 86px;
+  text-transform: uppercase;
+  color: #E0E0E0;
+  z-index: -1;
+
+  white-space: nowrap;
+
+  &__line {
+    &:nth-child(1n) {
+      margin-left: 39px;
+    }
+    &:nth-child(2n) {
+      margin-left: -192px;
+    }
+    &:nth-child(3n) {
+      margin-left: -22px;
+    }
+  }
+
+  span {
+    margin-left: 42px;
+  }
+}

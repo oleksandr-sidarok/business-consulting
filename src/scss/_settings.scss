@@ -19,6 +19,7 @@
 }
 
 body {
+  margin: 0;
   color: var(--text-color);
   background-color: var(--bg-color);
   min-height: 100vh;
@@ -37,6 +38,8 @@ a {
   padding: 0 15px;
   width: 100%;
   max-width: 1140px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .btn-reset {
@@ -70,7 +73,7 @@ a {
 
 .title {
   font-family: 'Bebas Neue';
-  margin: 25px 0;
+  margin: 10px 0;
 }
 
 .main-title {
@@ -88,8 +91,14 @@ a {
   }
 }
 
+.section-title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 36px;
+}
+
 .img-shadow {
-  box-shadow: 3px 3px 0px rgba(131, 193, 250, 1);;
+  box-shadow: 5px 5px 0px rgba(131, 193, 250, 1);;
 }
 
 .section-separator {
