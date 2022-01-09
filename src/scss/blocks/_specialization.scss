@@ -1,0 +1,79 @@
+.specialization {
+  &__inner {
+    padding: 50px 0;
+  }
+
+  &__list {
+    position: relative;
+    margin-top: 67px;
+    padding-left: 28px;
+  }
+
+  &__details {
+    position: relative;
+    padding: 16px;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      right: 0;
+      top: 14px;
+      background-image: url('../img/icon/icon-details.svg');
+      z-index: -1;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 56px;
+      left: -28px;
+      right: 0;
+      height: 1px;
+      width: auto;
+      background-color: var(--separator-color);
+    }
+
+    summary::marker {
+      content: '';
+    }
+  }
+
+
+  &__item {
+    &::marker {
+      font-family: SF Pro Display;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      color: var(--marker-color);
+    }
+    @for $i from 1 through 20 {
+      @if $i < 10 {
+        &:nth-child(#{$i})::marker {
+          content: "0#{$i}";
+        }
+      } @else {
+        &:nth-child(#{$i})::marker {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    margin-left: -40px;
+    margin-top: 34px;
+  }
+
+  &-list__title {
+    display: inline;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: none;
+    font-family: 'SF Pro Display';
+  }
+}

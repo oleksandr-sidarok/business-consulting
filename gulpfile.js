@@ -124,6 +124,7 @@ function serve () {
   watch('src/scss/**/*.scss', series(css, cssNomin, refresh))
   watch('src/partials/*.html', htmlInclude);
   watch('src/*.html', htmlInclude);
+  watch('src/**/*.js', js);
 }
 
 exports.html = html

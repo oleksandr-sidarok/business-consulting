@@ -30,6 +30,7 @@
   --icon-color: #E0E0E0;
   --separator-color: #C4C4C4;
   --text-stroke-color: #262626;
+  --marker-color: #4F4F4F;
 }
 
 .dark {
@@ -49,11 +50,17 @@ body {
   min-height: 100vh;
   font-family: "SF Pro Display";
   font-size: 14px;
+  line-height: 22px;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
 }
 
 .container {
@@ -96,7 +103,10 @@ a {
 
 .title {
   font-family: "Bebas Neue";
+  font-size: 36px;
+  font-weight: 400;
   margin: 10px 0;
+  line-height: 1;
 }
 
 .main-title {
@@ -142,16 +152,29 @@ a {
 }
 .video-block__video {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .video-block__play {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 36px;
   height: 36px;
+  transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 4;
+}
+
+details.open .title {
+  color: #83C1FA;
+}
+details.open::before {
+  background-color: #83C1FA;
+}
+details.open::after {
+  fill: #83C1FA;
+  transform: rotate(180deg);
 }
 
 .header {
@@ -175,7 +198,6 @@ a {
 
 .nav {
   position: relative;
-  height: 46px;
   font-size: 20px;
 }
 .nav__list {
@@ -297,9 +319,126 @@ a {
 
 .burger {
   cursor: pointer;
-}
-.burger__icon {
   width: 46px;
   height: 46px;
+}
+.burger__icon {
   fill: none;
+}
+
+.specialization__inner {
+  padding: 50px 0;
+}
+.specialization__list {
+  position: relative;
+  margin-top: 67px;
+  padding-left: 28px;
+}
+.specialization__details {
+  position: relative;
+  padding: 16px;
+}
+.specialization__details::after {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 0;
+  top: 14px;
+  background-image: url("../img/icon/icon-details.svg");
+  z-index: -1;
+}
+.specialization__details::before {
+  position: absolute;
+  content: "";
+  top: 56px;
+  left: -28px;
+  right: 0;
+  height: 1px;
+  width: auto;
+  background-color: var(--separator-color);
+}
+.specialization__details summary::marker {
+  content: "";
+}
+.specialization__item::marker {
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--marker-color);
+}
+.specialization__item:nth-child(1)::marker {
+  content: "01";
+}
+.specialization__item:nth-child(2)::marker {
+  content: "02";
+}
+.specialization__item:nth-child(3)::marker {
+  content: "03";
+}
+.specialization__item:nth-child(4)::marker {
+  content: "04";
+}
+.specialization__item:nth-child(5)::marker {
+  content: "05";
+}
+.specialization__item:nth-child(6)::marker {
+  content: "06";
+}
+.specialization__item:nth-child(7)::marker {
+  content: "07";
+}
+.specialization__item:nth-child(8)::marker {
+  content: "08";
+}
+.specialization__item:nth-child(9)::marker {
+  content: "09";
+}
+.specialization__item:nth-child(10)::marker {
+  content: "10";
+}
+.specialization__item:nth-child(11)::marker {
+  content: "11";
+}
+.specialization__item:nth-child(12)::marker {
+  content: "12";
+}
+.specialization__item:nth-child(13)::marker {
+  content: "13";
+}
+.specialization__item:nth-child(14)::marker {
+  content: "14";
+}
+.specialization__item:nth-child(15)::marker {
+  content: "15";
+}
+.specialization__item:nth-child(16)::marker {
+  content: "16";
+}
+.specialization__item:nth-child(17)::marker {
+  content: "17";
+}
+.specialization__item:nth-child(18)::marker {
+  content: "18";
+}
+.specialization__item:nth-child(19)::marker {
+  content: "19";
+}
+.specialization__item:nth-child(20)::marker {
+  content: "20";
+}
+.specialization__text {
+  position: relative;
+  margin-left: -40px;
+  margin-top: 34px;
+}
+.specialization-list__title {
+  display: inline;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: none;
+  font-family: "SF Pro Display";
 }
