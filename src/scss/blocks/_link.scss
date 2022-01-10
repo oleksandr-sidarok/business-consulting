@@ -1,0 +1,31 @@
+.link {
+  position: relative;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #262626;
+  padding-left: 35px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 21px;
+    height: 21px;
+    transform: translateY(-50%);
+    background-image: url('../img/icon/icon-link.svg');
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 35px;
+    right: 0;
+    height: 1px;
+    bottom: -3px;
+    background-color: var(--separator-color);
+  }
+}
