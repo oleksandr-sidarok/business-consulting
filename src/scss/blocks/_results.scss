@@ -1,0 +1,36 @@
+.results {
+  padding-bottom: 110px;
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    margin-top: 40px;
+  }
+
+  &__item {
+    padding: 26px 30px;
+    border: 1px solid var(--separator-color);
+
+    & + & {
+      border-top: none;
+    }
+  }
+
+  &__descr {
+    max-width: 220px;
+    display: block;
+    margin-top: 30px;
+  }
+
+  &__result {
+    display: block;
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 100px;
+    text-transform: uppercase;
+    color: var(--results-color);
+  }
+}
