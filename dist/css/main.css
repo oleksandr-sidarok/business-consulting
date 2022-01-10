@@ -523,3 +523,27 @@ details.open::after {
   text-transform: uppercase;
   color: var(--results-color);
 }
+
+.growth-rates {
+  padding-bottom: 110px;
+}
+.growth-rates__title {
+  white-space: wrap;
+  width: 160px;
+}
+.growth-rates__text {
+  margin-top: 30px;
+}
+.growth-rates__slider {
+  position: relative;
+  margin-top: 30px;
+}
+.growth-rates__slider .slider__inner {
+  position: relative;
+  display: flex;
+  width: 1000px;
+}
+.growth-rates__img img {
+  height: 200px;
+  margin-right: 30px;
+}

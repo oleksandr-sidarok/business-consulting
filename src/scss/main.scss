@@ -5,15 +5,16 @@
 @import './settings';
 
 // Import blocks styles
-@import './blocks/header.scss';
-@import './blocks/nav.scss';
-@import './blocks/theme-toggle.scss';
-@import './blocks/intro.scss';
-@import './blocks/about-me.scss';
-@import './blocks/back-text-block.scss';
-@import './blocks/burger.scss';
-@import './blocks/specialization.scss';
+@import './blocks/header';
+@import './blocks/nav';
+@import './blocks/theme-toggle';
+@import './blocks/intro';
+@import './blocks/about-me';
+@import './blocks/back-text-block';
+@import './blocks/burger';
+@import './blocks/specialization';
 @import './blocks/about-project';
 @import './blocks/link';
 @import './blocks/img-border';
 @import './blocks/results';
+@import './blocks/growth-rates';
