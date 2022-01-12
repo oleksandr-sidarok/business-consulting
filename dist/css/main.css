@@ -566,3 +566,28 @@ details.open::after {
 .team__img img {
   margin-right: 30px;
 }
+
+.other-projects {
+  margin-bottom: 110px;
+}
+.other-projects__inner {
+  padding-top: 50px;
+}
+.other-projects__title {
+  margin-bottom: 54px;
+}
+.other-projects__slider {
+  display: flex;
+  margin-left: -30px;
+}
+.other-projects__slider .slider__slide {
+  max-width: 270px;
+  margin-left: 30px;
+  opacity: 0.5;
+}
+.other-projects__slider .slider__slide.focus {
+  opacity: 1;
+}
+.other-projects__slider .slider__logo {
+  margin-bottom: 20px;
+}

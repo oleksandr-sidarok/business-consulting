@@ -1,0 +1,29 @@
+.other-projects {
+  margin-bottom: 110px;
+
+  &__inner {
+    padding-top: 50px;
+  }
+
+  &__title {
+    margin-bottom: 54px;
+  }
+
+  &__slider {
+    display: flex;
+    margin-left: -30px;
+    .slider__slide {
+      max-width: 270px;
+      margin-left: 30px;
+      opacity: 0.5;
+    }
+
+    .slider__slide.focus {
+      opacity: 1;
+    }
+
+    .slider__logo {
+      margin-bottom: 20px;
+    }
+  }
+}
