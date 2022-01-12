@@ -547,3 +547,22 @@ details.open::after {
   height: 200px;
   margin-right: 30px;
 }
+
+.team {
+  padding-bottom: 110px;
+}
+.team__text {
+  margin-top: 30px;
+}
+.team__slider {
+  position: relative;
+  margin-top: 30px;
+}
+.team__slider .slider__inner {
+  position: relative;
+  display: flex;
+  width: 1000px;
+}
+.team__img img {
+  margin-right: 30px;
+}
