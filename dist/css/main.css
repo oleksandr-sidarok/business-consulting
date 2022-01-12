@@ -591,3 +591,29 @@ details.open::after {
 .other-projects__slider .slider__logo {
   margin-bottom: 20px;
 }
+
+.testimonials {
+  margin-bottom: 110px;
+}
+.testimonials__title {
+  margin-top: 50px;
+}
+.testimonials__slider {
+  margin-top: 60px;
+  display: flex;
+  margin-left: -30px;
+}
+.testimonials__slider .slider__slide {
+  min-width: 270px;
+  margin-left: 30px;
+}
+.testimonials__name {
+  display: block;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.testimonials__role {
+  margin-top: 3px;
+  color: #828282;
+}

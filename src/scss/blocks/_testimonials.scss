@@ -1,0 +1,30 @@
+.testimonials {
+  margin-bottom: 110px;
+
+  &__title {
+    margin-top: 50px;
+  }
+
+  &__slider {
+    margin-top: 60px;
+    display: flex;
+    margin-left: -30px;
+
+    .slider__slide {
+      min-width: 270px;
+      margin-left: 30px;
+    }
+  }
+
+  &__name {
+    display: block;
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__role {
+    margin-top: 3px;
+    color: #828282;
+  }
+}
