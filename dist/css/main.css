@@ -27,10 +27,34 @@
   --bg-color: white;
   --text-color: #262626;
   --results-color: #83C1FA;
-  --icon-color: #E0E0E0;
+  --icon-color: #3C3C3C;
   --separator-color: #C4C4C4;
   --text-stroke-color: #262626;
   --marker-color: #4F4F4F;
+}
+.light .theme-togle__icon--day {
+  display: none;
+}
+.light .theme-togle__icon--night {
+  display: block;
+}
+.light #logo-light {
+  display: block;
+}
+.light #logo-dark {
+  display: none;
+}
+.light .burger__icon--light {
+  display: block;
+}
+.light .burger__icon--dark {
+  display: none;
+}
+.light .link::before {
+  filter: invert(0%);
+}
+.light .social__item::after {
+  filter: invert(0%);
 }
 
 .dark {
@@ -38,9 +62,33 @@
   --bg-color: #262626;
   --text-color: white;
   --results-color: white;
-  --icon-color: #3C3C3C;
+  --icon-color: #E0E0E0;
   --separator-color: #C4C4C4;
   --text-stroke-color: #8E8E8E;
+}
+.dark .theme-togle__icon--day {
+  display: block;
+}
+.dark .theme-togle__icon--night {
+  display: none;
+}
+.dark #logo-light {
+  display: none;
+}
+.dark #logo-dark {
+  display: block;
+}
+.dark .burger__icon--light {
+  display: none;
+}
+.dark .burger__icon--dark {
+  display: block;
+}
+.dark .link::before {
+  filter: invert(100%);
+}
+.dark .social__item::after {
+  filter: invert(100%);
 }
 
 body {
@@ -194,6 +242,7 @@ details.open::after {
 }
 .header__logo {
   width: 46px;
+  height: 30px;
 }
 
 .nav {
@@ -620,7 +669,7 @@ details.open::after {
 
 .contact__inner {
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 .contact__text {
   font-size: 20px;
@@ -635,13 +684,19 @@ details.open::after {
   font-weight: bold;
   font-size: 56px;
   line-height: 56px;
+  max-width: 300px;
 }
 .social__item {
   padding-left: 48px;
   position: relative;
+  transition: all 0.3s ease-in;
 }
 .social__item + .social__item {
   margin-top: 64px;
+}
+.social__item:hover {
+  color: var(--accent-color);
+  fill: var(--accent-color);
 }
 .social__item::before, .social__item::after {
   content: "";
@@ -653,9 +708,10 @@ details.open::after {
 }
 .social__item::before {
   left: 0;
+  opacity: 0.7;
 }
 .social__item::after {
-  opacity: 0.2;
+  opacity: 0.5;
   right: 0;
   width: 32px;
   height: 32px;
@@ -676,4 +732,15 @@ details.open::after {
   width: 74px;
   height: 62px;
   background-image: url("../img/icon/icon-telegram.svg");
+}
+
+.footer {
+  color: #BDBDBD;
+  padding: 30px 15px;
+}
+.footer__copyright {
+  display: block;
+}
+.footer__policy {
+  text-decoration: underline;
 }

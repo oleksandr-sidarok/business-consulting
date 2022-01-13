@@ -2,10 +2,11 @@
   <div class="container">
     <div class="header__inner">
       <a href="#" class="header__logo">
-        <img src="./img/logo.svg" alt="Company logotype">
+        <img src="./img/logo.png" alt="" id="logo-light">
+        <img src="./img/logo-dark.png" alt="" id="logo-dark">
       </a>
       <button class="btn-reset theme-toggle">
-        <svg class="theme-togle__icon theme-togle__icon--day hiden">
+        <svg class="theme-togle__icon theme-togle__icon--day">
           <use xlink:href="img/sprite.svg#icon-day-mode"></use>
         </svg>
         <svg class="theme-togle__icon theme-togle__icon--night">
@@ -14,8 +15,11 @@
       </button>
       <nav class="nav">
         <button class="btn-reset burger">
-          <svg class="burger__icon">
+          <svg class="burger__icon burger__icon--light">
             <use xlink:href="img/sprite.svg#icon-burger"></use>
+          </svg>
+          <svg class="burger__icon burger__icon--dark">
+            <use xlink:href="img/sprite.svg#icon-burger-dark"></use>
           </svg>
         </button>
         <ul class="nav__list list-reset hiden">

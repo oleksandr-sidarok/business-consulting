@@ -1,0 +1,12 @@
+.footer {
+  color:#BDBDBD;
+  padding: 30px 15px;
+
+  &__copyright {
+    display: block;
+  }
+
+  &__policy {
+    text-decoration: underline;
+  }
+}
