@@ -18,6 +18,10 @@
 
   white-space: nowrap;
 
+  @media (min-width:768px) {
+    margin-top: -154px;
+  }
+
   &__line {
     &:nth-child(1n) {
       margin-left: 39px;

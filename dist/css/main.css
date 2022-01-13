@@ -436,12 +436,44 @@ details.open::after {
 .about-me {
   margin-top: 80px;
 }
+@media (min-width: 768px) {
+  .about-me {
+    margin-top: 200px;
+  }
+}
 .about-me__inner {
   position: relative;
   padding: 50px 0 120px;
 }
+@media (min-width: 768px) {
+  .about-me__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) {
+  .about-me__title {
+    width: 50%;
+  }
+}
 .about-me__text {
   margin-top: 144px;
+}
+@media (min-width: 768px) {
+  .about-me__text {
+    margin-top: 0;
+    margin-bottom: 30px;
+    width: 50%;
+  }
+  .about-me__text p {
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  .about-me__video {
+    width: 50%;
+    margin-left: 50%;
+  }
 }
 .about-me__img {
   position: absolute;
@@ -450,6 +482,18 @@ details.open::after {
   top: 52px;
   right: 22px;
   transform: rotate(-10deg);
+}
+.about-me__img img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .about-me__img {
+    right: none;
+    left: 14px;
+    top: 290px;
+    width: 200px;
+  }
 }
 
 .back-text-block {
@@ -469,6 +513,11 @@ details.open::after {
   color: #E0E0E0;
   z-index: -1;
   white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .back-text-block {
+    margin-top: -154px;
+  }
 }
 .back-text-block__line:nth-child(1n) {
   margin-left: 39px;

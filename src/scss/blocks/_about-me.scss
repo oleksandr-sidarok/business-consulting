@@ -1,13 +1,45 @@
 .about-me {
   margin-top: 80px;
 
+  @media (min-width: 768px) {
+    margin-top: 200px;
+  }
+
   &__inner {
     position: relative;
     padding: 50px 0 120px;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__title {
+    @media (min-width:768px) {
+      width: 50%;
+    }
   }
 
   &__text {
     margin-top: 144px;
+
+    @media (min-width:768px) {
+      margin-top: 0;
+      margin-bottom: 30px;
+      width: 50%;
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__video {
+    @media (min-width: 768px) {
+      width: 50%;
+      margin-left: 50%;
+    }
   }
 
   &__img {
@@ -17,5 +49,17 @@
     top: 52px;
     right: 22px;
     transform: rotate(-10deg);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @media (min-width:768px) {
+      right: none;
+      left: 14px;
+      top: 290px;
+      width: 200px;
+
+    }
   }
 }
