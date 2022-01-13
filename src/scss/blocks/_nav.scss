@@ -1,5 +1,5 @@
 .nav {
-  position: relative;
+  // position: relative;
   font-size: 20px;
 
   &__list {
@@ -16,6 +16,20 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
+
+    &.hiden {
+      @media (min-width: 768px) {
+        display: flex;
+        position: static;
+        visibility: visible;
+        width: auto;
+      }
+    }
+
+    @media (min-width: 768px) {
+      text-align: start;
+      padding-top: 94px;
+    }
   }
 
   &__item:not(:last-child) {
@@ -26,5 +40,17 @@
     position: absolute;
     top: 24px;
     right: 15px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .btn-wrapper {
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }

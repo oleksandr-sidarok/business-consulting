@@ -5,15 +5,31 @@
   left: 0;
   right: 0;
   background-color: var(--bg-color);
-  overflow: hidden;
   z-index: 5;
+
+  @media (min-width: 768px) {
+    padding: 27px 0;
+    overflow: hidden;
+  }
 
   &__inner {
     @include flex-all-sb;
+
+    @media (min-width: 768px) {
+      position: relative;
+      align-items: flex-start;
+      justify-content: start;
+      overflow: hidden;
+    }
   }
 
   &__logo {
     width: 46px;
     height: 30px;
+
+    @media (min-width: 768px) {
+      margin-right: 38px;
+    }
   }
+
 }

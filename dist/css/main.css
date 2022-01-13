@@ -121,7 +121,7 @@ svg {
 }
 
 .btn-reset {
-  background: none;
+  background-color: transparent;
   color: inherit;
   padding: 0;
   margin: 0;
@@ -130,6 +130,14 @@ svg {
 
 .btn {
   cursor: pointer;
+  padding: 22px 40px 18px;
+  border: 1px solid var(--accent-color);
+  border-radius: 60px;
+  font-family: Bebas Neue;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
 }
 
 .list-reset {
@@ -232,21 +240,38 @@ details.open::after {
   left: 0;
   right: 0;
   background-color: var(--bg-color);
-  overflow: hidden;
   z-index: 5;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 27px 0;
+    overflow: hidden;
+  }
 }
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 768px) {
+  .header__inner {
+    position: relative;
+    align-items: flex-start;
+    justify-content: start;
+    overflow: hidden;
+  }
+}
 .header__logo {
   width: 46px;
   height: 30px;
 }
+@media (min-width: 768px) {
+  .header__logo {
+    margin-right: 38px;
+  }
+}
 
 .nav {
-  position: relative;
   font-size: 20px;
 }
 .nav__list {
@@ -262,6 +287,20 @@ details.open::after {
   flex-direction: column;
   text-align: center;
 }
+@media (min-width: 768px) {
+  .nav__list.hiden {
+    display: flex;
+    position: static;
+    visibility: visible;
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .nav__list {
+    text-align: start;
+    padding-top: 94px;
+  }
+}
 .nav__item:not(:last-child) {
   margin-bottom: 40px;
 }
@@ -269,6 +308,18 @@ details.open::after {
   position: absolute;
   top: 24px;
   right: 15px;
+}
+@media (min-width: 768px) {
+  .nav__close {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .nav .btn-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .theme-toggle {
@@ -279,6 +330,12 @@ details.open::after {
 .theme-toggle__icon {
   width: 26px;
   height: 26px;
+}
+@media (min-width: 768px) {
+  .theme-toggle {
+    margin-right: 170px;
+    margin-top: -2px;
+  }
 }
 
 .intro {
@@ -373,6 +430,11 @@ details.open::after {
 }
 .burger__icon {
   fill: none;
+}
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
 }
 
 .specialization__inner {
@@ -655,6 +717,10 @@ details.open::after {
 .testimonials__slider .slider__slide {
   min-width: 270px;
   margin-left: 30px;
+}
+.testimonials__slider .video-block {
+  height: 175px;
+  overflow: hidden;
 }
 .testimonials__name {
   display: block;
