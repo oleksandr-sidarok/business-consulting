@@ -23,17 +23,27 @@
         position: static;
         visibility: visible;
         width: auto;
+        height: auto;
       }
     }
 
     @media (min-width: 768px) {
       text-align: start;
-      padding-top: 94px;
+      padding: 0;
     }
   }
 
-  &__item:not(:last-child) {
-    margin-bottom: 40px;
+  &__item {
+    @media(max-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+
+    & + & {
+      @media(min-width: 768px) {
+        margin-top: 24px;
+      }
+    }
   }
 
   &__close {

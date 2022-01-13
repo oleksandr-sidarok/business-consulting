@@ -100,6 +100,12 @@ body {
   font-size: 14px;
   line-height: 22px;
 }
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 
 a {
   color: inherit;
@@ -178,6 +184,18 @@ svg {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--text-stroke-color);
   text-shadow: none;
+}
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 160px;
+    line-height: 160px;
+  }
+}
+@media (min-width: 992px) {
+  .main-title {
+    font-size: 190px;
+    line-height: 190px;
+  }
 }
 
 .section-title {
@@ -293,16 +311,25 @@ details.open::after {
     position: static;
     visibility: visible;
     width: auto;
+    height: auto;
   }
 }
 @media (min-width: 768px) {
   .nav__list {
     text-align: start;
-    padding-top: 94px;
+    padding: 0;
   }
 }
-.nav__item:not(:last-child) {
-  margin-bottom: 40px;
+@media (max-width: 768px) {
+  .nav__item {
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+}
+@media (min-width: 768px) {
+  .nav__item + .nav__item {
+    margin-top: 24px;
+  }
 }
 .nav__close {
   position: absolute;
@@ -341,11 +368,22 @@ details.open::after {
 .intro {
   margin-top: 70px;
 }
+@media (min-width: 768px) {
+  .intro {
+    margin-top: 200px;
+  }
+}
 .intro__text {
   position: relative;
   max-width: 160px;
   padding-left: 42vw;
   font-weight: 500;
+}
+@media (min-width: 768px) {
+  .intro__text {
+    padding-left: 13vw;
+    min-width: 205px;
+  }
 }
 .intro__text::before {
   content: "";
@@ -356,9 +394,19 @@ details.open::after {
   height: 1px;
   background: #E0E0E0;
 }
+@media (min-width: 768px) {
+  .intro__text::before {
+    width: 12vw;
+  }
+}
 .intro__inner {
   position: relative;
   margin-top: 70px;
+}
+@media (min-width: 768px) {
+  .intro__inner {
+    margin-top: 120px;
+  }
 }
 .intro__img {
   position: absolute;
@@ -367,6 +415,18 @@ details.open::after {
   width: 180px;
   height: auto;
   z-index: -1;
+}
+@media (min-width: 768px) {
+  .intro__img {
+    top: -76px;
+    width: 440px;
+  }
+}
+@media (min-width: 992px) {
+  .intro__img {
+    top: -76px;
+    width: 540px;
+  }
 }
 .intro__img img {
   width: 100%;
