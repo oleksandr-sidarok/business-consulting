@@ -1,12 +1,30 @@
 .specialization {
   &__inner {
     padding: 50px 0 0 0;
+    margin-bottom: 50px;
+
+    @media (min-width: 768px) {
+      display: flex;
+      border-bottom: 1px solid var(--separator-color);
+      padding-bottom: 200px;
+    }
+  }
+
+  &__title {
+    @media (min-width: 768px) {
+      width: 50%;
+    }
   }
 
   &__list {
     position: relative;
     margin-top: 67px;
     padding-left: 28px;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      margin-top: 0;
+    }
   }
 
   &__details {

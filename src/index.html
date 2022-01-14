@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
   <title>Document</title>
 </head>
 <body class="light">
@@ -13,15 +14,34 @@
       @include('partials/intro.html')
       @include('partials/about-me.html')
       @include('partials/specialization.html')
-      @include('partials/about-project.html')
-      @include('partials/results.html')
-      @include('partials/growth-rates.html')
-      @include('partials/team.html')
+      <div class="container">
+        <div class="swiper project-slider">
+          <h2 class="main-title title">Webnauts</h2>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              @include('partials/about-project.html')
+            </div>
+            <div class="swiper-slide">
+              @include('partials/results.html')
+            </div>
+            <div class="swiper-slide">
+              @include('partials/growth-rates.html')
+            </div>
+            <div class="swiper-slide">
+              @include('partials/team.html')
+            </div>
+          </div>
+          <div class="project-button-prev">Назад</div>
+          <div class="project-button-next">Дальше</div>
+          <div class="swiper-pagination" id="sw-pg"></div>
+        </div>
+      </div>
       @include('partials/other-projects.html')
       @include('partials/testimonials.html')
       @include('partials/contact.html')
     </main>
     @include('partials/footer.html')
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="main.min.js"></script>
 </body>
 </html>

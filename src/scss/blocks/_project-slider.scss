@@ -1,0 +1,95 @@
+.project-slider {
+  .project-button-next, .project-button-prev {
+    display: none;
+  }
+  @media (min-width: 1140px) {
+    position: relative;
+    width: 100%;
+    height: 1120px;
+
+    .swiper-wrapper {
+      margin-top: 70px;
+    }
+
+    .project-button-next, .project-button-prev {
+      display: flex;
+      position: absolute;
+      border: 1px solid var(--text-color);
+      border-radius: 100%;
+      padding: 34px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--text-color);
+      font-family: Bebas Neue;
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      justify-content: center;
+      box-sizing: content-box;
+      top: 70px;
+      user-select: none;
+      cursor: pointer;
+
+      &::after {
+        content: none;
+      }
+
+      &:hover {
+        background-color: var(--accent-color);
+        border: transparent;
+        color: #fff;
+      }
+    }
+
+    .project-button-next {
+      right: 0;
+    }
+    .project-button-prev {
+      left: auto;
+      right: 118px;
+    }
+
+    .swiper-pagination {
+      width: auto;
+      height: 200px;
+      position: absolute;
+      top: 340px;
+      left: 0;
+      font-family: Bebas Neue;
+      font-style: normal;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: transparent;
+      font-weight: 1px;
+      text-align: start;
+      z-index: -1;
+
+      .swiper-pagination-current {
+        position: relative;
+        font-size: 144px;
+        color: #BDBDBD;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 40px;
+          left: 80px;
+          width: 1px;
+          height: 1em;
+          transform: rotate(45deg);
+          background-color: var(--separator-color);
+        }
+      }
+
+      .swiper-pagination-total {
+        display: block;
+        padding-left: 110px;
+        margin-top: 20px;
+        font-size: 44px;
+        opacity: 0.6;
+        color: #BDBDBD;
+      }
+    }
+  }
+}

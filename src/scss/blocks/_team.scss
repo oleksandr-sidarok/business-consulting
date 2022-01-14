@@ -1,23 +1,52 @@
 .team {
   padding-bottom: 110px;
 
+  &__title {
+    @media (min-width: 1140px) {
+      margin-left: 240px;
+      margin-top: 10px;
+    }
+  }
+
   &__text {
     margin-top: 30px;
+
+    @media (min-width: 1140px) {
+      margin-left: 240px;
+      width: 250px;
+    }
   }
 
   &__slider {
-    position: relative;
     margin-top: 30px;
-    .slider__inner {
-      position: relative;
-      display: flex;
-      width: 1000px;
+
+    @media (min-width: 1140px) {
+      .swiper-wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 
   &__img {
-    img {
-      margin-right: 30px;
+    @media (min-width: 1140px) {
+      img {
+        width: 240px;
+      }
+
+      &:nth-child(1), &:nth-child(2) {
+        position: absolute;
+        top: -330px;
+      }
+
+      &:nth-child(1) {
+        right: 290px;
+      }
+
+      &:nth-child(2) {
+        right: 15px;
+      }
+
     }
   }
 }
