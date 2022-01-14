@@ -18,6 +18,8 @@
   }
 
   &__slider {
+    user-select: none;
+    overflow: hidden;
     margin-top: 30px;
 
     @media (min-width: 1140px) {
@@ -29,6 +31,9 @@
   }
 
   &__img {
+    img {
+      width: 100%;
+    }
     @media (min-width: 1140px) {
       img {
         width: 240px;

@@ -22,12 +22,16 @@
   }
 
   &__slider {
-    margin-top: 130px;
-    height: 180px;
+    margin-top: 60px;
     user-select: none;
 
     .swiper-scrollbar {
+      bottom: 60px !important;
       opacity: 0.5;
+    }
+
+    @media (min-width: 1140px) {
+      margin-top: 130px;
     }
   }
 
@@ -37,12 +41,17 @@
     }
 
     &--main {
-      position: absolute;
-      top: 0;
-      right: 0;
+      display: none;
 
-      img {
-        width: 520px;
+      @media (min-width: 1140px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+          width: 520px;
+        }
       }
     }
   }

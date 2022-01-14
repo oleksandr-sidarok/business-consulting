@@ -18,16 +18,51 @@ const projectSliderSettings = {
 const growthSliderSettings = {
   direction: 'horizontal',
   loop: false,
-  slidesPerView: 4,
+  slidesPerView: 4.5,
   spaceBetween: 30,
+  autoHeight: true,
   scrollbar: {
     el: ".swiper-scrollbar",
     hide: false,
   },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 20
+    },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 2.5,
+      spaceBetween: 40
+    }
+  }
 }
 
-const projectSlider = new Swiper('.project-slider', projectSliderSettings);
+const teamSliderSettings = {
+  direction: 'horizontal',
+  loop: false,
+  slidesPerView: 4.5,
+  spaceBetween: 30,
+  autoHeight: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.25,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 2.5,
+      spaceBetween: 30
+    }
+  }
+}
+
 const growthSlider = new Swiper('.growth-rates__slider', growthSliderSettings);
+const teamSlider = new Swiper('.team__slider', teamSliderSettings);
+
+const projectSlider = new Swiper('.project-slider', projectSliderSettings);
 
 if (document.documentElement.clientWidth < 1140) {
   onProjectSlider(false)
@@ -41,7 +76,7 @@ window.addEventListener('resize', () => {
   if (document.documentElement.clientWidth < 1140) {
     onProjectSlider(false)
   }
-  if (document.documentElement.clientWidth > 1140) {
+  if (document.documentElement.clientWidth >= 1140) {
     onProjectSlider(true)
   }
 })

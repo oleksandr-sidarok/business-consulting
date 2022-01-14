@@ -37,6 +37,8 @@
   .social__item::after {
     filter: invert(0%);
   }
+
+  // cursor: url('../img/cursor-1.svg'), url('../img/cursor-2.svg'), default;
 }
 
 .dark {
@@ -77,6 +79,8 @@
   .social__item::after {
     filter: invert(100%);
   }
+
+  // cursor: url('../img/cursor-white.svg'), url('../img/cursor-2.svg'), default;
 }
 
 body {
@@ -132,6 +136,12 @@ svg {
   font-size: 24px;
   line-height: 24px;
   text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    // cursor: url('../img/cursor-2.svg'), default;
+  }
 }
 
 .list-reset {

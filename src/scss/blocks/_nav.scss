@@ -44,6 +44,11 @@
         margin-top: 24px;
       }
     }
+
+    &:hover {
+      text-decoration: underline;
+      // cursor: url('../img/cursor-2.svg'), default;
+    }
   }
 
   &__close {
@@ -53,6 +58,12 @@
 
     @media (min-width: 768px) {
       display: none;
+    }
+
+    &:hover {
+      svg {
+        stroke: var(--accent-color);
+      }
     }
   }
 
