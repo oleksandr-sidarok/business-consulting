@@ -1,29 +1,116 @@
 .other-projects {
   margin-bottom: 110px;
 
+  &__button-prev, &__button-next {
+    display: none;
+  }
+
+  @media (min-width: 1140px) {
+    margin-bottom: 180px;
+
+    &__button-prev, &__button-next {
+      display: flex;
+      position: absolute;
+      border: 1px solid var(--text-color);
+      border-radius: 100%;
+      padding: 34px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--text-color);
+      font-family: Bebas Neue;
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      justify-content: center;
+      box-sizing: content-box;
+      user-select: none;
+      cursor: pointer;
+      bottom: 0;
+
+      &:hover {
+        background-color: var(--accent-color);
+        border: transparent;
+        color: #fff;
+      }
+    }
+
+    &__button-next {
+      left: 120px;
+    }
+
+  }
+
   &__inner {
     padding-top: 50px;
+
+    @media (min-width: 1140px) {
+      display: flex;
+    }
   }
 
   &__title {
     margin-bottom: 54px;
+
+    @media (min-width: 1140px) {
+      display: block;
+      width: 50%;
+    }
   }
 
   &__slider {
-    display: flex;
-    margin-left: -30px;
-    .slider__slide {
-      max-width: 270px;
-      margin-left: 30px;
-      opacity: 0.5;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+
+    @media (max-width: 540px) {
+      .swiper-slide {
+        opacity: 0.5;
+      }
+      .swiper-slide.swiper-slide-active {
+        opacity: 1;
+      }
     }
 
-    .slider__slide.focus {
-      opacity: 1;
-    }
-
-    .slider__logo {
+    .swiper-slide {
       margin-bottom: 20px;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+
+    @media (min-width: 1140px) {
+      width: 50%;
+      padding-bottom: 140px;
+
+      .swiper-pagination {
+        position: absolute;
+        display: block;
+        bottom: auto !important;
+        left: auto !important;
+        right: -90px;
+        top: 0;
+        width: auto;
+        color: black;
+
+        font-family: Bebas Neue;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 96px;
+        line-height: 96px;
+        text-transform: uppercase;
+        color: transparent;
+        z-index: -1;
+
+        span:first-child {
+          color: #E0E0E0;
+        }
+        span:first-child::before {
+          content: '0';
+          color: #E0E0E0;
+        }
+      }
     }
   }
 }

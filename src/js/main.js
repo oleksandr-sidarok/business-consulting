@@ -45,6 +45,42 @@ const growthSliderSettings = {
   }
 }
 
+const otherProjectsSliderSettings = {
+  direction: 'horizontal',
+  loop: false,
+  slidesPerView: 3,
+  autoHeight: true,
+  spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'fraction'
+  },
+  navigation: {
+    nextEl: '.other-projects__button-next',
+    prevEl: '.other-projects__button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.25,
+      spaceBetween: 30
+    },
+    480: {
+      slidesPerView: 1.5,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 2.5,
+      spaceBetween: 40
+    },
+    1140: {
+      slidesPerView: 1,
+      spaceBetween: 50
+    }
+  }
+}
+
 const teamSliderSettings = {
   direction: 'horizontal',
   loop: false,
@@ -54,7 +90,7 @@ const teamSliderSettings = {
   breakpoints: {
     // when window width is >= 320px
     320: {
-      slidesPerView: 1.25,
+      slidesPerView: 1.1,
       spaceBetween: 30
     },
     // when window width is >= 640px
@@ -72,6 +108,8 @@ const teamSliderSettings = {
 const growthSlider = new Swiper('.growth-rates__slider', growthSliderSettings);
 
 const teamSlider = new Swiper('.team__slider', teamSliderSettings);
+
+const otherProjectsSlider = new Swiper('.other-projects__slider', otherProjectsSliderSettings);
 
 const projectSlider = new Swiper('.project-slider', projectSliderSettings);
 

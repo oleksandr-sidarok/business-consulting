@@ -965,26 +965,114 @@ details.open::after {
 .other-projects {
   margin-bottom: 110px;
 }
+.other-projects__button-prev, .other-projects__button-next {
+  display: none;
+}
+@media (min-width: 1140px) {
+  .other-projects {
+    margin-bottom: 180px;
+  }
+  .other-projects__button-prev, .other-projects__button-next {
+    display: flex;
+    position: absolute;
+    border: 1px solid var(--text-color);
+    border-radius: 100%;
+    padding: 34px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-family: Bebas Neue;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    justify-content: center;
+    box-sizing: content-box;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    bottom: 0;
+  }
+  .other-projects__button-prev:hover, .other-projects__button-next:hover {
+    background-color: var(--accent-color);
+    border: transparent;
+    color: #fff;
+  }
+  .other-projects__button-next {
+    left: 120px;
+  }
+}
 .other-projects__inner {
   padding-top: 50px;
+}
+@media (min-width: 1140px) {
+  .other-projects__inner {
+    display: flex;
+  }
 }
 .other-projects__title {
   margin-bottom: 54px;
 }
+@media (min-width: 1140px) {
+  .other-projects__title {
+    display: block;
+    width: 50%;
+  }
+}
 .other-projects__slider {
-  display: flex;
-  margin-left: -30px;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-.other-projects__slider .slider__slide {
-  max-width: 270px;
-  margin-left: 30px;
-  opacity: 0.5;
+@media (max-width: 540px) {
+  .other-projects__slider .swiper-slide {
+    opacity: 0.5;
+  }
+  .other-projects__slider .swiper-slide.swiper-slide-active {
+    opacity: 1;
+  }
 }
-.other-projects__slider .slider__slide.focus {
-  opacity: 1;
-}
-.other-projects__slider .slider__logo {
+.other-projects__slider .swiper-slide {
   margin-bottom: 20px;
+}
+.other-projects__slider .swiper-pagination {
+  display: none;
+}
+@media (min-width: 1140px) {
+  .other-projects__slider {
+    width: 50%;
+    padding-bottom: 140px;
+  }
+  .other-projects__slider .swiper-pagination {
+    position: absolute;
+    display: block;
+    bottom: auto !important;
+    left: auto !important;
+    right: -90px;
+    top: 0;
+    width: auto;
+    color: black;
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 96px;
+    text-transform: uppercase;
+    color: transparent;
+    z-index: -1;
+  }
+  .other-projects__slider .swiper-pagination span:first-child {
+    color: #E0E0E0;
+  }
+  .other-projects__slider .swiper-pagination span:first-child::before {
+    content: "0";
+    color: #E0E0E0;
+  }
 }
 
 .testimonials {
