@@ -34,24 +34,23 @@
     img {
       width: 100%;
     }
+
+    &--main {
+      display: none;
+    }
+
     @media (min-width: 1140px) {
-      img {
-        width: 240px;
-      }
-
-      &:nth-child(1), &:nth-child(2) {
+      &--main {
+        display: block;
         position: absolute;
-        top: -330px;
-      }
+        top: 0;
+        right: 45px;
+        width: 220px;
 
-      &:nth-child(1) {
-        right: 290px;
+        &:first-child {
+          right: 360px;
+        }
       }
-
-      &:nth-child(2) {
-        right: 15px;
-      }
-
     }
   }
 }

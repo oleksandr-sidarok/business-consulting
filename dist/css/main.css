@@ -946,19 +946,19 @@ details.open::after {
 .team__img img {
   width: 100%;
 }
+.team__img--main {
+  display: none;
+}
 @media (min-width: 1140px) {
-  .team__img img {
-    width: 240px;
-  }
-  .team__img:nth-child(1), .team__img:nth-child(2) {
+  .team__img--main {
+    display: block;
     position: absolute;
-    top: -330px;
+    top: 0;
+    right: 45px;
+    width: 220px;
   }
-  .team__img:nth-child(1) {
-    right: 290px;
-  }
-  .team__img:nth-child(2) {
-    right: 15px;
+  .team__img--main:first-child {
+    right: 360px;
   }
 }
 

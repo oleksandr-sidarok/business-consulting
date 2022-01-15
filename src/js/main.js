@@ -1,6 +1,8 @@
 const projectSliderElement = document.querySelector('.project-slider')
-const projectSliderWrpper = projectSliderElement.querySelector('.swiper-wrapper')
-console.log(projectSliderElement)
+const teamSliderElement = document.querySelector('.team__slider')
+const projectSliderWrapper = projectSliderElement.querySelector('.swiper-wrapper')
+const teamSliderWrapper = teamSliderElement.querySelector('.swiper-wrapper')
+
 const projectSliderSettings = {
   direction: 'horizontal',
   loop: false,
@@ -35,6 +37,10 @@ const growthSliderSettings = {
     768: {
       slidesPerView: 2.5,
       spaceBetween: 40
+    },
+    1140: {
+      slidesPerView: 4.5,
+      spaceBetween: 30
     }
   }
 }
@@ -55,29 +61,38 @@ const teamSliderSettings = {
     768: {
       slidesPerView: 2.5,
       spaceBetween: 30
+    },
+    1140: {
+      slidesPerView: 4,
+      spaceBetween: 30
     }
   }
 }
 
 const growthSlider = new Swiper('.growth-rates__slider', growthSliderSettings);
+
 const teamSlider = new Swiper('.team__slider', teamSliderSettings);
 
 const projectSlider = new Swiper('.project-slider', projectSliderSettings);
 
 if (document.documentElement.clientWidth < 1140) {
   onProjectSlider(false)
+  onTeamSlider(true)
 }
-if (document.documentElement.clientWidth > 1140) {
+if (document.documentElement.clientWidth >= 1140) {
   onProjectSlider(true)
+  onTeamSlider(false)
 }
 
 window.addEventListener('resize', () => {
   console.log('resize!')
   if (document.documentElement.clientWidth < 1140) {
     onProjectSlider(false)
+    onTeamSlider(true)
   }
   if (document.documentElement.clientWidth >= 1140) {
     onProjectSlider(true)
+    onTeamSlider(false)
   }
 })
 
@@ -113,10 +128,20 @@ navCloseBtn.addEventListener('click', () => {
 
 function onProjectSlider (bool) {
   if (!bool) {
-    projectSliderWrpper.classList.remove('swiper-wrapper')
+    projectSliderWrapper.classList.remove('swiper-wrapper')
     projectSlider.destroy(true, true)
   } else {
-    projectSliderWrpper.classList.add('swiper-wrapper')
+    projectSliderWrapper.classList.add('swiper-wrapper')
     projectSlider.init(projectSliderSettings)
+  }
+}
+
+function onTeamSlider (bool) {
+  if (!bool) {
+    teamSlider.slideTo(3, 30)
+    teamSlider.disable()
+  } else {
+    teamSlider.slideTo(1, 30)
+    teamSlider.enable()
   }
 }
