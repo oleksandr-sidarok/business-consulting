@@ -1,7 +1,5 @@
 const projectSliderElement = document.querySelector('.project-slider')
-const teamSliderElement = document.querySelector('.team__slider')
 const projectSliderWrapper = projectSliderElement.querySelector('.swiper-wrapper')
-const teamSliderWrapper = teamSliderElement.querySelector('.swiper-wrapper')
 
 const projectSliderSettings = {
   direction: 'horizontal',
@@ -105,9 +103,35 @@ const teamSliderSettings = {
   }
 }
 
+const testimonialsSliderSettings = {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 4.5,
+  spaceBetween: 30,
+  autoHeight: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.25,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 2.5,
+      spaceBetween: 30
+    },
+    1140: {
+      slidesPerView: 3.25,
+      spaceBetween: 30
+    }
+  }
+}
+
 const growthSlider = new Swiper('.growth-rates__slider', growthSliderSettings);
 
 const teamSlider = new Swiper('.team__slider', teamSliderSettings);
+
+const testimonialsSlider = new Swiper('.testimonials__slider', testimonialsSliderSettings);
 
 const otherProjectsSlider = new Swiper('.other-projects__slider', otherProjectsSliderSettings);
 
