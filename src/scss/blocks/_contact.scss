@@ -2,6 +2,11 @@
   &__inner {
     margin-top: 100px;
     margin-bottom: 70px;
+
+    @media (min-width: 1140px) {
+      display: flex;
+      gap: 300px;
+    }
   }
 
   &__text {
@@ -9,5 +14,17 @@
     line-height: 30px;
     margin-bottom: 80px;
     color: #BDBDBD;
+  }
+
+  &__content {
+    @media (min-width: 1140px) {
+      max-width: 380px;
+    }
+  }
+
+  .social {
+    @media (min-width: 1140px) {
+      width: 35%;
+    }
   }
 }

@@ -1148,11 +1148,27 @@ details.open::after {
   margin-top: 100px;
   margin-bottom: 70px;
 }
+@media (min-width: 1140px) {
+  .contact__inner {
+    display: flex;
+    gap: 300px;
+  }
+}
 .contact__text {
   font-size: 20px;
   line-height: 30px;
   margin-bottom: 80px;
   color: #BDBDBD;
+}
+@media (min-width: 1140px) {
+  .contact__content {
+    max-width: 380px;
+  }
+}
+@media (min-width: 1140px) {
+  .contact .social {
+    width: 35%;
+  }
 }
 
 .social {
