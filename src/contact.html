@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>Document</title>
+</head>
+<body class="light">
+  @include('partials/header.html')
+  <main class="contact-page">
+    <div class="container">
+      <form action="#" class="contact__form">
+        <span class="contact-page__line contact-page__line--main">Привет,</span>
+        <div class="contact-page__line">
+          <label for="name">Меня зовут</label>
+          <input type="text" id="name" class="contact-page__input input-reset" placeholder="Введитеваше имя">
+        </div>
+        <div class="contact-page__line">
+          <label for="name">И вот моя почта</label>
+          <input type="text" id="name" class="contact-page__input input-reset" placeholder="Введитеваше имя">
+        </div>
+        <div class="contact-page__line">
+          <label for="name">Я хочу сказать</label>
+          <input type="text" id="name" class="contact-page__input input-reset" placeholder="Введитеваше имя">
+        </div>
+        <button class="btn contact-page__btn btn-reset" type="submit">Отправить</button>
+      </form>
+    </div>
+  </main>
+  <div class="container">
+    <div class="section-separator"></div>
+  </div>
+  @include('partials/footer.html')
+</body>
+</html>

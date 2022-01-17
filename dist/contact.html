@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>Document</title>
+</head>
+<body class="light">
+  <header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <img src="./img/logo.png" alt="" id="logo-light">
+        <img src="./img/logo-dark.png" alt="" id="logo-dark">
+      </a>
+      <button class="btn-reset theme-toggle">
+        <svg class="theme-togle__icon theme-togle__icon--day">
+          <use xlink:href="img/sprite.svg#icon-day-mode"></use>
+        </svg>
+        <svg class="theme-togle__icon theme-togle__icon--night">
+          <use xlink:href="img/sprite.svg#icon-night-mode"></use>
+        </svg>
+      </button>
+      <nav class="nav">
+        <button class="btn-reset burger">
+          <svg class="burger__icon burger__icon--light">
+            <use xlink:href="img/sprite.svg#icon-burger"></use>
+          </svg>
+          <svg class="burger__icon burger__icon--dark">
+            <use xlink:href="img/sprite.svg#icon-burger-dark"></use>
+          </svg>
+        </button>
+        <ul class="nav__list list-reset hiden">
+          <button class="nav__close modal-close btn-reset">
+            <svg>
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <li class="nav__item"><a href="#" class="nav__link" data-goto=".about-me">Обо мне</a></li>
+          <li class="nav__item"><a href="#" class="nav__link" data-goto=".about-project">Мои проекты</a></li>
+          <li class="nav__item"><a href="#" class="nav__link" data-goto=".testimonials">Отзывы</a></li>
+          <div class="btn-wrapper">
+            <button class="btn btn-reset btn-contact">Связаться со мной</button>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+  <main class="contact-page">
+    <div class="container">
+      <form action="#" class="contact__form">
+        <span class="contact-page__line contact-page__line--main">Привет,</span>
+        <div class="contact-page__line">
+          <label for="name">Меня зовут</label>
+          <input type="text" id="name" class="contact-page__input input-reset" placeholder="Введитеваше имя">
+        </div>
+        <div class="contact-page__line">
+          <label for="name">И вот моя почта</label>
+          <input type="text" id="name" class="contact-page__input input-reset" placeholder="Введитеваше имя">
+        </div>
+        <div class="contact-page__line">
+          <label for="name">Я хочу сказать</label>
+          <input type="text" id="name" class="contact-page__input input-reset" placeholder="Введитеваше имя">
+        </div>
+        <button class="btn contact-page__btn btn-reset" type="submit">Отправить</button>
+      </form>
+    </div>
+  </main>
+  <div class="container">
+    <div class="section-separator"></div>
+  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <span class="footer__copyright">2020. Все права защищены</span>
+      <span class="footer__policy"><a href="#">Политика конфиденциальности</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

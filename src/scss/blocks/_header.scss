@@ -1,11 +1,18 @@
 .header {
   padding: 15px 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   background-color: var(--bg-color);
   z-index: 5;
+
+  &.fixed {
+    position: fixed;
+    border-bottom: 1px solid var(--separator-color);
+    animation-name: showHeader;
+    animation-duration: 0.5s;
+  }
 
   @media (min-width: 768px) {
     padding: 27px 0;
@@ -32,4 +39,12 @@
     }
   }
 
+  @keyframes showHeader {
+    from {
+      top: -500px;
+    }
+    to {
+      top: 0;
+    }
+  }
 }

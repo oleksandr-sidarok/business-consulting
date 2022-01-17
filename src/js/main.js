@@ -1,5 +1,6 @@
 const projectSliderElement = document.querySelector('.project-slider')
 const projectSliderWrapper = projectSliderElement.querySelector('.swiper-wrapper')
+const headerElement = document.querySelector('.header')
 
 const projectSliderSettings = {
   direction: 'horizontal',
@@ -158,6 +159,50 @@ window.addEventListener('resize', () => {
   }
 })
 
+window.addEventListener('scroll', () => {
+  let scrollPosition = window.pageYOffset
+  setTimeout(() => {
+    if ((scrollPosition - window.pageYOffset) > 200) {
+      headerElement.classList.add('fixed')
+    }
+    if ((window.pageYOffset - scrollPosition) > 200) {
+      headerElement.classList.remove('fixed')
+    }
+    if (window.pageYOffset < 100) {
+      headerElement.classList.remove('fixed')
+    }
+  }, 200)
+})
+
+// Animation back text
+const backTextArray = document.querySelectorAll('.back-text-block__line')
+let padding = 0
+window.addEventListener('scroll', () => {
+  let scrollPosition = window.pageYOffset
+  setTimeout(() => {
+    if ((scrollPosition - window.pageYOffset) > 1) {
+      padding -= 7
+      backTextArray.forEach((element, index) => {
+        if (index % 2 === 0) {
+          element.style = `padding-left: ${padding}px`
+        } else {
+          element.style = `padding-right: ${padding}px`
+        }
+      })
+    }
+    if ((window.pageYOffset - scrollPosition) > 1) {
+      padding += 7
+      backTextArray.forEach((element, index) => {
+        if (index % 2 === 0) {
+          element.style = `padding-left: ${padding}px`
+        } else {
+          element.style = `padding-right: ${padding}px`
+        }
+      })
+    }
+  }, 100)
+})
+
 const details = document.querySelectorAll('details')
 const themeTogle = document.querySelector('.theme-toggle')
 const burgerBtn = document.querySelector('.burger')
@@ -188,6 +233,33 @@ navCloseBtn.addEventListener('click', () => {
   navList.classList.add('hiden')
 })
 
+
+// Scroll
+const navLinksArray = document.querySelectorAll('.nav__link')
+
+navLinksArray.forEach((navLinkElement) => {
+  navLinkElement.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (navLinkElement.dataset.goto && document.querySelector(navLinkElement.dataset.goto)) {
+      const gotoBlock = document.querySelector(navLinkElement.dataset.goto)
+      let gotoBlockValue = gotoBlock.getBoundingClientRect().top + window.pageYOffset
+      if (headerElement.classList.contains('fixed')) {
+        gotoBlockValue -= headerElement.offsetHeight
+      }
+      window.scrollTo ({
+        top: gotoBlockValue,
+        behavior: "smooth"
+      });
+    }
+  })
+})
+
+// Button coontact me
+const contactButton = document.querySelector('.btn-contact')
+contactButton.addEventListener('click', () => {
+  window.location.href = './contact.html';
+})
+
 function onProjectSlider (bool) {
   if (!bool) {
     projectSliderWrapper.classList.remove('swiper-wrapper')
@@ -205,5 +277,19 @@ function onTeamSlider (bool) {
   } else {
     teamSlider.slideTo(1, 30)
     teamSlider.enable()
+  }
+}
+
+function onScroll (e) {
+  const navLink = e.target;
+  if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
+      const gotoBlock = document.querySelector(navLink.dataset.goto);
+      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + window.pageYOffset - document.querySelector('header').offsetHeight;
+
+      window.scrollTo ({
+          top: gotoBlockValue,
+          behavior: "smooth"
+      });
+      e.preventDefault();
   }
 }

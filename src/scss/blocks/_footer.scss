@@ -1,6 +1,6 @@
 .footer {
   color:#BDBDBD;
-  padding: 30px 15px;
+  padding: 30px 0;
 
   &__copyright {
     display: block;
@@ -8,5 +8,12 @@
 
   &__policy {
     text-decoration: underline;
+  }
+
+  &__inner {
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
